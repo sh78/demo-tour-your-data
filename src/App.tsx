@@ -4,6 +4,7 @@ import "./App.scss";
 import Container from "react-bootstrap/Container";
 import HeaderBar from "./components/HeaderBar";
 import DataTable from "./components/DataTable";
+import TableDetail from "./components/TableDetail";
 
 function App() {
   return (
@@ -13,10 +14,10 @@ function App() {
       </Container>
       <Container as="main" id="main-content" fluid="lg">
         <Route exact={true} path="/" component={DataTable} />
-        {
-          // TODO: detail view for a table's metrics
-          /* <Route path="/table/:id" component={TableDetail} /> */
-        }
+        <Route
+          path="/tables/:id"
+          render={(props) => <TableDetail {...props} />}
+        />
       </Container>
     </div>
   );
