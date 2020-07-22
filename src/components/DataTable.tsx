@@ -1,4 +1,5 @@
 import React from "react";
+import { Switch, Route, Link } from "react-router-dom";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 
@@ -9,7 +10,7 @@ type DataTableProps = {
 function DataTable(props: DataTableProps) {
   return (
     <>
-      <h1>{props.title}</h1>
+      <h1>All Tables</h1>
       <Table responsive striped bordered hover>
         <thead>
           <tr>
@@ -27,7 +28,9 @@ function DataTable(props: DataTableProps) {
             <td>Schema</td>
             <td>Columns</td>
             <td>
-              <Button variant="primary">View</Button>
+              <Link to="/tables/:id">
+                <Button variant="primary">View</Button>
+              </Link>
             </td>
           </tr>
         </tbody>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Switch, Route, Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -20,7 +21,7 @@ function HeaderBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#dashboard">Dashboard</Nav.Link>
+            <Link to="/">Dashboard</Link>
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
