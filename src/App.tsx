@@ -2,13 +2,16 @@ import React from "react";
 import "./App.scss";
 import Container from "react-bootstrap/Container";
 import HeaderBar from "./components/HeaderBar";
+import DataTable from "./components/DataTable";
 
 function App() {
   return (
     <div className="App">
-      <Container as="main" id="main-content" fluid="lg">
+      <Container fluid="lg">
         <HeaderBar />
-        <h1>All Tables</h1>
+      </Container>
+      <Container as="main" id="main-content" fluid="lg">
+        <DataTable title="All Tables" />
       </Container>
     </div>
   );
