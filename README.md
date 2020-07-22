@@ -4,7 +4,7 @@ A loose example of a dashboard where you can inspect your live app data and gain
 insights. Uses a demo of the [Toro Data API](https://torodata.io/) for mock
 purposes.
 
-**See a live demo [here]().**
+**See a live demo [here](https://elated-pasteur-a8fc98.netlify.app/).**
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) 
 and [React Bootstrap](https://react-bootstrap.github.io).
