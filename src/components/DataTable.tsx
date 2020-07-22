@@ -15,24 +15,21 @@ type AxiosResponse = {
 
 function DataTable(props: DataTableProps) {
   // Fetch API data to State
-  const [data, setData] = useState({});
+  const [ToroData, setToroData] = useState<any[]>([]);
   useEffect(() => {
     const fetchData = async () => {
       return await axios(`https://interview.torodata.io/tables/`);
     };
 
-    fetchData().then((value: AxiosResponse) => {
-      console.log(value);
-      setData(value);
+    fetchData().then((response: AxiosResponse) => {
+      console.log(response.data);
+      setToroData(response.data);
     });
   }, []);
 
   return (
     <>
       <h1>All Tables</h1>
-      {/*data.map((item) => (
-        <li>{item}</li>
-        ))*/}
       <Table responsive striped bordered hover>
         <thead>
           <tr>
@@ -44,17 +41,19 @@ function DataTable(props: DataTableProps) {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Name</td>
-            <td>Schema</td>
-            <td>Columns</td>
-            <td>
-              <Link to={`/tables/${":id"}`}>
-                <Button variant="primary">View</Button>
-              </Link>
-            </td>
-          </tr>
+          {ToroData.map((item) => (
+            <tr>
+              <td>{item.id}</td>
+              <td>{item.name}</td>
+              <td>{item.schema}</td>
+              <td>{item.columns.length}</td>
+              <td>
+                <Link to={`/tables/${item.id}`}>
+                  <Button variant="primary">View</Button>
+                </Link>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </Table>
     </>
