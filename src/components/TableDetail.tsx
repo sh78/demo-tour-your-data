@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route, Link } from "react-router-dom";
 import axios from "axios";
 import Card from "react-bootstrap/Card";
 
@@ -30,7 +29,7 @@ function TableDetail(props: any) {
       console.log(response.data);
       setToroData(response.data);
     });
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -47,7 +46,7 @@ function TableDetail(props: any) {
           <Card key={item.id}>
             <Card.Body>
               <Card.Title>
-                <code>{item.metric}</code>
+                <code>{name}</code>
               </Card.Title>
               <Card.Text>
                 <code>

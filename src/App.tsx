@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import "./App.scss";
 import Container from "react-bootstrap/Container";
 import HeaderBar from "./components/HeaderBar";
