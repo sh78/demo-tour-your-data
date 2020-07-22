@@ -22,7 +22,6 @@ function DataTable(props: DataTableProps) {
     };
 
     fetchData().then((response: AxiosResponse) => {
-      console.log(response.data);
       setToroData(response.data);
     });
   }, []);
